@@ -1,0 +1,51 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'student/css/icard.css' %}">
+{% endblock %}
+
+{% block headjs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="dbtn">
+    <button class="download btn btn-outline-primary">Download <i class="fa-solid fa-download"></i></button>
+</div>
+<div class="main_card">
+    <div class="icard-box"></div>
+
+    <div class="card">
+        <div class="img-text">
+            <img src="{% static 'home/images/logoimg2.png' %}" alt="">
+            <h2>Cranfield University</h2>
+        </div>
+        <div class="profile">
+            {% if student.profile_pic %}
+            <img src="{{student.profile_pic.url}}" alt="">
+            {% else %}
+            <img src="{% static 'student/images/profilephoto.webp' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="detail">
+            <p> <span class="bld">Name :</span> {{studentmore.first_name|capfirst}} {{studentmore.last_name|capfirst}}</p>
+            <p><span class="bld">Father's Name :</span> {{student.father_name|capfirst}}</p>
+            <p><span class="bld">D.O.B :</span> {{student.DOB}}</p>
+            <p><span class="bld">Class :</span> {{student.stu_class}} (sem {{student.semester}})</p>
+            <p><span class="bld">Address :</span> {{student.address}}</p>
+            <p><span class="bld">Ph. No. :</span> {{student.phone}}</p>
+        </div>
+        <div class="prin">
+            <img src="{% static 'student/images/sign2.png' %}" alt="">
+            <h3>Principal</h3>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block mrjava %}
+<script src="{% static 'student/js/icard.js' %}"></script>
+{% endblock %}

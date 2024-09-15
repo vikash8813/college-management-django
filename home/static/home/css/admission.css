@@ -1,0 +1,263 @@
+body{
+    background-color: #fff;
+}
+
+.admsn-img img{
+    width: 100%;
+    height: 40rem;
+}
+
+.study-cran{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 6rem 8rem;
+    color: #271e3d;
+}
+
+.small-line2{
+    height: 0.5rem;
+    width: 3rem;
+    background-color: #005d8f;
+    margin: 2rem auto;
+}
+
+.study-cran h1{
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+.study-cran p{
+    font-size: 2rem;
+}
+
+.box1{
+    margin: 4rem 0;
+}
+.course-table{
+    margin: 0 auto;
+    width: 80%;    
+}
+
+.course-table h1{
+    margin: 3rem 0;
+}
+
+table{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+tr,th,td{
+    border: 1px solid black;
+}
+
+.admis-head{
+    padding: 2rem;
+    font-size: 2rem;
+    color: #271e3d;
+    background-color: #f1f1f1;
+}
+
+.admis-data1{
+    font-size: 1.5rem;
+    padding: 2rem;
+    font-weight: 500;
+    background-color: #f1f1f1;
+}
+
+.admis-data{
+    font-size: 1.5rem;
+    padding: 2rem;
+    font-weight: 500;
+    background-color: #f1f1f1;
+}
+
+.admis-data1:hover{
+    text-decoration: underline;
+
+}
+
+.cran-course{
+    margin: 2rem 4rem;
+    color: #271e3d;
+}
+
+.course-pay{
+    width: 90%;
+    margin: 4rem auto;
+    padding: 2rem;
+    border: 1px solid #271e3d;
+    background-color: white;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 15%);
+    color: #271e3d;
+}
+
+.course{
+    /* text-align: center; */
+    margin: 3rem auto;
+    border: 1px 0 solid #271e3d;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 2rem 4rem;
+}
+
+.course p{
+    font-size: 1.5rem;
+}
+.time{
+    color: #3eae8d;
+}
+.name-fees{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name-fees a{
+    color: black;
+}
+
+.name-fees h1{
+    color: #3eae8d;
+    margin-right: 4rem;
+}
+
+
+
+.name-fees a:hover{
+    text-decoration: underline;
+}
+
+.details{
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.details p{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.fees{
+    display: flex;
+    align-items: center;
+}
+.fees h1{
+    font-size: 2rem;
+    font-weight: bold
+}
+
+.peryear{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.fees button{
+    font-size: large;
+    font-weight: bold;
+}
+
+.semester{
+    color: orange;
+    font-size: 2rem;
+}
+
+.eligible-date{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}
+
+.eligible-date h2{
+    font-size: 2rem;
+}
+
+.mail{
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: red;
+}
+
+
+@media(max-width:800px){
+    .admsn-img img{
+        height: auto;
+    }
+    .fees h1{
+        margin: 0 2rem;
+    }
+
+    .course-pay{
+        padding: 1rem;
+    }
+
+    .course{
+        padding: 2rem;
+    }
+
+    .name-fees h2{
+        font-size: 1.7rem;
+    }
+
+    .details p{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .eligible-date{
+        width: 80%;
+    }
+
+    .eligible-date h2{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media(max-width:500px){
+
+
+    .course-table{
+        width: 100%;
+    }
+    .course-table h1{
+        margin-left: 2rem;
+        font-weight: bold;
+    }
+    table{
+        margin: 0;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .admis-head{
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    .admis-data1{
+        padding: 1rem;
+        /* font-size: 1rem; */
+    }
+    .admis-data{
+        padding: 1rem;
+        /* font-size: 1rem; */
+    }
+
+    .details{
+        width: 85%;
+    }
+
+    .eligible-date{
+        flex-direction: column;
+    }
+
+    .admsn-date{
+        margin: 2rem 0;
+    }
+}

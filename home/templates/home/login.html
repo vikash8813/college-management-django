@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="global-container">
+    <div class="reg-img" data-aos="fade-up">
+        <a href="{% url 'home' %}"><img src="{% static 'home/images/logoimg2.png' %}" alt=""></a>
+        <h2>Follow Your Dreams</h2>
+    </div>
+    <div class="card login-form" data-aos="fade-up">
+        <div class="card-body">
+            <h1 class="card-title text-center">  Login Saff/Student </h1>
+            <div class="card-text">
+                {% if messages %}
+
+                {% for message in messages %}
+                <div class="alert {% if message.tags %} alert-{{message.tags}} {% endif %} alert-dismissible   logfont" role="alert">
+                    <strong>{{message}}</strong> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username:</label>
+                        <input type="text" name="username" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password:</label>
+                        <input type="password" name="password" class="form-control " id="exampleInputPassword1" placeholder="Enter your password" required>
+                    </div>
+
+
+
+                    <!-- <a href"#" style="float:right;font-size:12px;">Forgot password?</a> -->
+
+                    <button type="submit" class="btn btn-primary btn-block mt-2 sign">Login</button>
+
+                    <div class="sign-up mt-2 log">
+                        Does'nt  have an account? <a href="{% url 'register' %}">Create</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

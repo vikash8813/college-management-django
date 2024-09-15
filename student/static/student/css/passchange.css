@@ -1,0 +1,54 @@
+.passchange-form{
+    width: 70%;
+    margin: 3rem auto;
+    background-color: #f1f1f1;
+    padding: 2rem;
+    /* text-align: center; */
+}
+
+.passchange-form h1{
+    text-align: center;
+    color:#271e3d;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+.form-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.span-label{
+    font-weight: bold;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+.span-field{
+    margin: 0 1rem;
+    width: 20rem;
+}
+
+.form-error{
+    font-size: 0.7rem;
+    color: red;
+}
+.savebtn{
+    text-align: center;
+    /* padding-right: 25%; */
+}
+
+.saveinput{
+    width: 5rem;
+}
+
+@media(max-width:600px){
+    .passchange-form{
+        width: 85%;
+    }
+}
+
+@media(max-width:400px){
+    .passchange-form{
+        width: 95%;
+    }
+}

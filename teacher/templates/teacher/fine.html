@@ -1,0 +1,61 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'teacher/css/fine.css' %}">
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'studentinfo' %}" class="back"><button><i class="fa-solid fa-arrow-left-long"></i></button></a>
+<div class="student-fine">
+    <h1 class="stu-fine">Student Fine</h1>
+    {% if fines %}
+    <table>
+        <tr>
+            <th class="heading">Reason</th>
+            <th class="heading">Amount</th>
+            <th class="heading">Status</th>
+            <th class="heading">Last Submission</th>
+            <th class="heading">paid</th>
+        </tr>
+        {% for fine in fines %}
+        <tr>
+            <td>{{fine.reason|capfirst}}</td>
+            <td>&#8377 {{fine.amount}}</td>
+            {% if fine.status %}
+                <td><span class="paid">Paid</span></td>
+            {% else %}
+                <td ><span class="unpaid">Unpaid</span></td>
+            {% endif %}
+            <td>{{fine.last_date}}</td>
+            <td>{{fine.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <td class="total">Total Fine</td>
+            <td class="total">&#8377 {{total}}</td>
+        </tr>
+    </table>
+    {% else %}
+    <h1 class="nofine">You have no fine yet.</h1>
+    {% endif %}
+
+</div>
+
+<div class="addform">
+    <form action="" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="about-pdf">
+            <span class="span-label">{{fm.label_tag}}</span>
+            <span class="span-field">{{fm}}</span>
+            <span class="span-error">{{fm.errors|striptags}}</span>
+        </div>
+        {% endfor %}
+
+        <input type="submit" value="Save" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}

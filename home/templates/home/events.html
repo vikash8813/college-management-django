@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Craanfield University- Events
+{% endblock title %}
+
+{% block desgin%}
+
+<link rel="stylesheet" href="{% static 'home/css/event.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="back-img" data-aos="fade-up">
+    <img src="{% static 'home/images/eventimg.jpg' %}" alt="">
+</div>
+
+<div class="event-main" data-aos="fade-up">
+    <h3 class="event-date">{{event.event_date|date:"d M Y"}}</h3>
+    <h1 class="event">{{event.description}}</h1>
+    <div class="small-line2"></div>
+    <p class="event-desc2">{{event.department}}</p>
+</div>
+
+<div class="event-info" data-aos="fade-up">
+    <div class="event-flex">
+        <div class="event-box">
+            <p>EVENT DATE</p>
+            <h2>{{event.event_date|date:"d M Y"}}</h2>
+        </div>
+
+        <div class="event-box">
+            <p>EVENT TIME</p>
+            <h2>{{event.event_time}}</h2>
+        </div> 
+
+    </div>
+
+    <div class="event-flex">
+        <div class="event-box">
+            <p>EVENT LOCATION</p>
+            <h2>{{event.location}} </h2>
+        </div>
+
+        <div class="event-box">
+            <p>EVENT LOCATION</p>
+            <h2>{{event.phone}} </h2>
+        </div>
+    </div>
+
+    <div class="event-flex">
+        <div class="event-box">
+            <p>EVENT ORGANISER</p>
+            <h2>{{event.organiser}}</h2>
+        </div>
+
+        <div class="event-box">
+            <p>MAIL</p>
+            <h3 class="mail">{{event.email}}</h3>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

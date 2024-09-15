@@ -1,0 +1,102 @@
+.main_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 2rem; */
+
+}
+
+.card {
+    width: 18rem;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding-bottom: 0.5rem;
+    background-color: #f1f1f1;
+    border: none;
+    z-index: -1;
+}
+
+.img-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.8rem;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.img-text img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.img-text h2 {
+    margin: 0;
+    color: #271e3d;
+    font-size: 1.5rem;
+}
+
+.profile {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.profile img {
+    width: 5rem;
+    height: 5.6rem;
+}
+
+.detail {
+    text-align: left;
+    padding-left: 1.8rem;
+    padding-top: 1rem;
+}
+
+.detail p {
+    margin: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.bld {
+    font-weight: bold;
+    color: #271e3d;
+}
+
+.dbtn {
+    padding-top: 1rem;
+    padding-right: 2rem;
+    text-align: right;
+}
+
+.icard-box {
+    height: 2rem;
+    width: 18rem;
+    border-radius: 3rem 3rem 0rem 0rem;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+  
+    background-color: #271e3d;
+}
+
+.prin {
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.prin img {
+    margin: 0;
+    color: green;
+    width: 3.5rem;
+    
+}
+
+.prin h3 {
+    margin: 0;
+    color: #271e3d;
+    font-size: 1rem;
+}
+
+@media(max-width:500px){
+    .main_card{
+        margin-top: 1rem;
+    }
+}

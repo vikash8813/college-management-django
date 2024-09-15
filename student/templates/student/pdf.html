@@ -1,0 +1,24 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'student/css/pdf.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<div class="student-pdf">
+    <h1>Student PDFs</h1>
+    <table>
+        <tr>
+            <th>About</th>
+            <th>Pdf</th>
+        </tr>
+        {% for pdf in pdfs %}
+            <tr>
+                <td>{{pdf.aboutpdf|capfirst}}</td>
+                <td><a href="{{pdf.mainpdf.url}}" target="_blank"><span class="open">Open</span></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

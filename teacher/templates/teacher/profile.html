@@ -1,0 +1,91 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'Student/css/profile.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<div class="profile">
+    <h1>Staff Profile</h1>
+    {% for message in messages %}
+            <div class="alert alert-{% if message.tags %}{{message.tags}}{% endif %} alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    {% endfor %}
+    <div class="profilea"><a href="{% url 'teacher_profileedit' %}" button class="btn btn-success">Edit <i class="fa-solid fa-pen-to-square"></i> </button></a></div>
+    <div class="main-photo">
+        <div class="main-data">
+            <table>
+                <tr>
+                    <td class="boldtd">Username</td>
+                    <td>{{studentmore.username}}</td>
+                </tr>
+                <tr>
+                    <td class="boldtd">First Name</td>
+                    <td>{{studentmore.first_name|capfirst}}</td>
+                </tr>
+                <tr>
+                    <td class="boldtd">Last Name</td>
+                    <td>{{studentmore.last_name|capfirst}}</td>
+                </tr>
+                <tr>
+                    <td class="boldtd">Father's Name</td>
+                    <td>{{student.father_name|capfirst}}</td>
+                </tr>
+                <tr>
+                    <td class="boldtd">Mother's Name</td>
+                    <td>{{student.mother_name|capfirst}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="profile-img">
+            {% if student.profile_pic %}
+                <img src="{{student.profile_pic.url}}" alt="">
+            {% else %}
+                <img src="{% static 'student/images/profilephoto.webp' %}" alt="">
+            {% endif %}
+        </div>
+    </div>
+    <div class="rest-table">
+        <table>
+            <tr>
+                <td class="resttd boldtd">Incharge</td>
+                <td class="resttd">{{student.inchage}}</td>
+                <td class="boldtd">Subjects</td>
+                <td>{{student.subject_teaches}}</td>
+            </tr>
+            <tr>
+                <td class="boldtd">Date Of Birth</td>
+                <td>{{student.DOB}}</td>
+                <td class="boldtd">Age</td>
+                <td>{{student.stu_age}}</td>
+            </tr>
+            <tr>
+                <td class="boldtd">Date Join</td>
+                <td>{{student.date_join}}</td>
+                <td class="boldtd">Experience</td>
+                <td>{{student.experience}}</td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <td class="resttd boldtd">Email</td>
+                <td>{{studentmore.email}}</td>
+            </tr>
+            <tr>
+                <td class="resttd boldtd">Phone</td>
+                <td>{{student.phone}}</td>
+            </tr>
+            <tr>
+                <td class="resttd boldtd">Address</td>
+                <td>{{student.address|capfirst}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+

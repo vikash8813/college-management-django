@@ -1,0 +1,153 @@
+.main-h1{
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 2rem;
+    color: dodgerblue;
+}
+.add-notify{
+    width: 80%;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+}
+form{
+    width: 100%;
+}
+.about-pdf{
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.span-label{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.span-field{
+    margin: 0 1rem;
+}
+
+.span-error{
+    color: red;
+}
+
+input[name=notify_date],input[name=notification],input[name=pdfurl],input[name=message]{
+    width: 30vw;
+}
+
+
+
+.notify-message{
+    /* display: flex; */
+    width: 90%;
+    margin: 1.5rem auto;
+    /* justify-content: space-between; */
+}
+
+.notify-message h1{
+    font-size: 2rem;
+    color: dodgerblue;
+}
+
+.notify-box{
+ 
+    margin: 0 auto;
+}
+
+
+
+.scroll-box{
+    /* height: auto; */
+    height: 70vh;
+    width: 100%;
+}
+
+
+
+#scroll-container {
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 2rem;
+    color: #271e3d;
+  }
+  
+#scroll-text p{
+    margin: 0;
+}
+#scroll-text p a{
+    text-decoration: none;
+}
+
+.ntfcns{
+    color: #271e3d;
+    transition: 0.3s;
+}
+
+
+
+table{
+    width: 100%;
+    margin:2rem  0rem;
+    background-color: #FAF9F6;
+}
+table ,td,th{
+    border: 1px solid black;
+}
+td{
+    padding: 0.3rem  0.5rem;
+    text-align: center;
+}
+th{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0.5rem ;
+}
+.notify-date{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-outline-danger{
+    font-weight: bold;
+}
+
+
+
+@media(max-width:600px){
+    .addpdf-form{
+        width: 90%;
+    }
+    input[name=aboutpdf]{
+        width: 40vw;
+    }
+}
+
+@media(max-width:850px){
+    .notify-message{
+        width: 95%;
+    }
+    #scroll-container{
+        padding: 0;
+    }
+}
+
+@media(max-width:600px){
+    .notify-message{
+        width: 100%;
+    }
+
+    .notify-message h1{
+        margin-left: 1rem;
+    }
+    td{
+        padding: 0.3rem;
+    }
+    th{
+        font-size: 1rem;
+        padding: 0.3rem ;
+    }
+}
+

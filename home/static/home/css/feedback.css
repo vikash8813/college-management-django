@@ -1,0 +1,109 @@
+body{
+    background-color: #f1f1f1;
+}
+
+.mainbox{
+    width: 85%;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+.feebacks{
+    width: 80%;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 10px 0 10px 0;
+    background-color: #fff;
+    border: 1px solid black;
+    position: relative;
+    min-height: 8rem;
+}
+
+.feebacks h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.feedtime{
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    color: #271e3d;
+}
+
+.cont {
+    width: 75%;
+    margin: 3rem;
+    margin-left: 5vw;
+    margin-right: 0;
+    font-size: 2rem;
+    position: sticky;
+    bottom: 0%;
+    /* padding-top: 3rem; */
+    background-color: #f1f1f1;
+    /* position: fixed;
+    bottom: 0; */
+}
+
+.feedtag{
+    color: #271e3d;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+textarea{
+    width: 90vw;
+    height: 15rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.feederror{
+    font-size: 1.5rem;
+    color: red ;
+}
+
+.subbtn{
+    padding: 0.5rem 1rem;
+    font-size: 1.8rem;
+}
+
+.msg {
+    color: rgb(21, 232, 21);
+}
+
+.feed {
+    font-size: 2rem;
+    /* width: 100%; */
+    padding: 1rem 5rem;
+
+}
+
+
+
+textarea.form-control {
+    font-size: 1.5rem;
+}
+
+@media(max-width:800px){
+   .feed {
+       padding: 2rem 2rem;
+   
+   }
+   .cont {
+       padding: 0 3rem;
+       margin-left: 3vw;
+       margin-right: 2rem;      
+   }
+   }
+
+@media(max-width:600px){
+    textarea{
+        width: 85vw;
+        height: 15rem;
+    }
+
+}

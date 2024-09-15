@@ -1,0 +1,71 @@
+.student-pdf{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.student-pdf h1{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: orange;
+}
+
+table{
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+table,th,td,tr{
+    border: 1px solid black;
+    text-align: center;
+}
+
+th{
+    font-size: 1.2rem;
+    padding: 0.65rem;
+}
+
+td{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+td{
+    padding: 0.5rem;
+}
+
+.open{
+    color: white;
+    background-color: #3eae8d;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+td a{
+    text-decoration: none;
+}
+
+
+.alert-dismissible{
+    z-index: 1;
+}
+
+
+/* TEACHER CSS🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️ */
+
+.teacher-pdfbtn{
+    text-align: right;
+    padding-right: 2rem;
+    margin: 1rem 0;
+}
+
+@media(max-width:900px){
+    .student-pdf{
+        width: 90%;
+    }
+}
+@media(max-width:600px){
+    .student-pdf{
+        width: 100%;
+    }
+}
+

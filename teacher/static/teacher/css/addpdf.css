@@ -1,0 +1,47 @@
+.addpdf-form{
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.addpdf-form h1{
+    font-size: 2rem;
+    color: #318CE7;
+    margin: 2rem 0;
+}
+form{
+    width: 100%;
+}
+.about-pdf{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.span-label{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.span-field{
+    margin: 0 1rem;
+}
+
+.span-error{
+    color: red;
+}
+
+input[name=aboutpdf]{
+    width: 40vw;
+}
+
+input[name=mainpdf]{
+    font-size: 0.8rem;
+}
+
+@media(max-width:600px){
+    .addpdf-form{
+        width: 90%;
+    }
+    input[name=aboutpdf]{
+        width: 40vw;
+    }
+}

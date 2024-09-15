@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cranfield University- Privacy
+{% endblock title %}
+
+{% block desgin%}
+<link rel="stylesheet" href="{% static 'home/css/privacy.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="image" data-aos="fade-up">
+    <img src="{% static 'home/images/primg.jpg' %}" alt="">
+</div>
+<div class="uni" >
+    <h1 data-aos="fade-up">CRANFIELD PRIVACY AND COOKIES</h1>
+    <div class="small-line2" data-aos="fade-up"></div>
+    <div class="uni-txt" data-aos="fade-up">
+        <p>Keele University is committed to ensuring visitors’ privacy whilst viewing University web pages. This page explains the types of data collected and how this information will be used.</p>
+    </div>
+</div>
+<div class="uni" >
+    <h1 class="cran" data-aos="fade-up">How the CRANFIELD handles your data</h1>
+    <div class="small-line2" data-aos="fade-up"></div>
+    <div class="uni-txt" data-aos="fade-up">
+        <p>When sharing personal data with the Cranfield, you can be sure that:</p>
+        <p>1.It's collected and held securely, so you know your information is safe. </p>
+        <p>2.We will use your data to make sure your experience with us is personalised, supportive and efficient</p>
+        <p>3.You can review and update the information we hold about you at any time.</p>
+        <p>4.You're in control of your data and, while we need to send you some types of communication, such as surveys, our annual report or claims and advisory information, you decide what other information you'd like to receive from us.</p>
+    
+    </div>
+</div>
+<div class="uni" >
+    <h1 data-aos="fade-up">HOW WE USE COOKIES</h1>
+    <div class="small-line2" data-aos="fade-up"></div>
+    <div class="uni-txt" data-aos="fade-up">
+        <p>A cookie is a small, often encrypted text file, which our website can send to your browser. It may then be stored on your computer, and can be accessed by our web server. Cookie data can then be retrieved and allow us to customise our web pages and services accordingly.</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,135 @@
+.course-img img{
+    width: 100%;
+}
+
+.cran-course{
+    width: 85%;
+    margin: 3rem auto;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    align-items: center;
+}
+
+.detail h1{
+    font-size: 2.5rem;
+}
+
+.detail h2{
+    color:  rgb(62, 174, 141);
+    font-weight: bold;
+}
+
+.place{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+}
+
+.duration{
+    margin-left: 1rem;
+    display: flex;
+    color:  rgb(62, 174, 141);
+
+}
+
+.course-info{
+    margin-left: 1.5rem;
+}
+.course-info h3{
+    color: black;
+}
+.info{
+    background-color: rgb(255, 228, 44);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.seats{
+    margin-left: 1rem;
+    display: flex;
+    color:  rgba(193, 90, 74, 0.973);
+}
+.semester{
+    margin-left: 1rem;
+    display: flex;
+    color:  rgb(235, 235, 20);
+}
+
+.elligiblity{
+    margin: 3rem 0;
+    margin-bottom: 2rem;
+    color: #271e3d;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.admsn-date p{
+    font-size: 2rem;
+}
+
+.subjects{
+    margin: 2rem 0;
+}
+
+.subjects h3{
+    color: #ff7900;
+}
+
+.descrip{
+    margin-bottom: 2rem;
+}
+
+.head{
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.contact{
+    display: flex;
+    padding: 2rem 0;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.mail{
+    color: rgb(207, 33, 33);
+}
+
+.phone{
+    color: green;
+}
+
+.course{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+.course p{
+    font-size: 2rem;
+}
+
+.small-line2{
+    height: 0.5rem;
+    width: 3rem;
+    background-color: #005d8f;
+    margin: 2rem auto;
+}
+
+@media(max-width:650px){
+    .elligiblity{
+        width: 100%;
+    }
+
+    .contact{
+        width: 100%;
+    }
+}

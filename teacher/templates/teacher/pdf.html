@@ -1,0 +1,35 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'student/css/pdf.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<div class="student-pdf">
+    <h1>Student PDFs</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{% if message.tags %}{{message.tags}}{% endif %} alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="teacher-pdfbtn"><a href="{% url 'addpdf' %}"><button class="btn btn-success">Add <i class="fa-solid fa-plus"></i></button></a></div>
+    <table>
+        <tr>
+            <th>About</th>
+            <th>Pdf</th>
+            <th>Delete Pdf</th>
+        </tr>
+        {% for pdf in pdfs %}
+            <tr>
+                <td>{{pdf.aboutpdf|capfirst}}</td>
+                <td><a href="{{pdf.mainpdf.url}}" target="_blank"><span class="open">Open</span></a></td>
+                <td><a href="{% url 'pdf_delete' pdf.id %}"><button class="btn btn-outline-danger">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+.student-box{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.student-box h1{
+    font-size: 2rem;
+    color: dodgerblue;
+}
+
+table{
+    width: 100%;
+    margin: 1rem 0;
+    background-color: #FAF9F6;
+}
+
+table,td,th{
+    border: 1px solid black;
+}
+
+td{
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}
+
+th{
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.stu-username{
+    font-weight: 500;
+}
+
+@media(max-width:850px){
+    .student-box{
+        width: 90%;
+    }
+}

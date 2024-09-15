@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+Cranfield University -  Staffs
+{% endblock %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/staffs.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="staffbox1">
+    <div class="staff-profile">
+        <div class="staff">
+            <div class="nameimg">
+                <div class="imgbox"><img src="{% static 'home/images/vcimg2.jpg' %}" alt=""></div>
+                <h2>Manoj Kumar</h2>
+            </div>
+            <div class="staff-detail">
+                <p class="myclassp">Incharge - Msc</p>
+                <p class="experience">Experience - 5years</p>
+                <p class="join">Date Join - 23/03/2022</p>
+                <h3 class="mail"><i class="fa-solid fa-envelope"></i> - staff@mail.com</h3>
+            </div>
+        </div>
+    </div>
+    <div class="staff-profile">
+        <div class="staff">
+            <div class="nameimg">
+                <div class="imgbox"><img src="{% static 'home/images/vcimg2.jpg' %}" alt=""></div>
+                <h2>Manoj Kumar</h2>
+            </div>
+            <div class="staff-detail">
+                <p class="myclassp">Incharge - Msc</p>
+                <p class="experience">Experience - 5years</p>
+                <p class="join">Date Join - 23/03/2022</p>
+                <h3 class="mail"><i class="fa-solid fa-envelope"></i> - staff@mail.com</h3>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

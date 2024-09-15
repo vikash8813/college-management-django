@@ -1,0 +1,132 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cranfield University-Home
+{% endblock title %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock desgin %}
+
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <strong class="alert-msg">{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+<div class="back-img" data-aos="fade-up">
+    <img src="{% static 'home/images/mainimg.png' %}" alt="">
+    <div class="reg-admsn">
+        <a href="{% url 'register' %}" class="register">Register <i class="fa-solid fa-caret-right"></i></a>
+        <a href="{% url 'admission' %}" class="register">Admission <i class="fa-solid fa-caret-right"></i></a>
+    </div>
+</div>
+
+<div class="msg-notify" data-aos="fade-up">   
+
+    <div class="chnc-box" data-aos="fade-up">
+        <h1>Vice Chanceller</h1>
+        <div class="chnc-msg">
+            <img src="{% static 'home/images/vcimg2.jpg' %}" alt="">
+            <h1>  -Dr. Gautam Das</h1>
+            <p>
+                The University of Mumbai is one of the oldest and premier Universities of India. I am honoured and greatly privileged to lead this great Institution; and continue to address the imminent challenges and to harness the overt and covert opportunities, in order to satisfy our stake holders. A unique  ... <a href="{% url 'vcmsg' %}">read more</a>
+            </p>
+        </div>
+    
+    </div>
+
+
+    <div class="scroll-box" data-aos="fade-up">
+        <h1>News</h1>
+        <div id="scroll-container">
+            <div id="scroll-text" >
+                {% for nm in allnotifications %}
+                    <p><a href="{{nm.pdfurl}}" target="_blank" class="ntfcns"> {{nm.notify_date}}   -    {{nm.notification}}</a></p> <br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="study-cran" data-aos="fade-up">
+    <div class="cran" data-aos="fade-up" >
+        <h1>STUDY AT CRANFIELD</h1>
+        <p>
+            Located in the Mumbai  and just few miles from Pune, Cranfield is world-renowned for its breadth of teaching and research that tackles the world's most urgent problems.
+        </p>
+
+        <div class="cran-quality">
+            <p><i class="fa-solid fa-award"></i> India's best university, as ranked by students</p> <hr>
+            <p> <i class="fa-solid fa-award"></i> Global Sustainability Institution of the Year</p><hr>
+            <p> <i class="fa-solid fa-award"></i> 96% graduate employability</p> <hr>
+        </div>
+    </div>
+
+    <div class="study-course" data-aos="fade-up">
+        <div class="course-content">
+            <i class="fa-solid fa-user-graduate fa-4x"></i>
+            <h2>Find Courses For You</h2>
+            <a href="{% url 'admission' %}">Admission now <i class="fa-solid fa-circle-chevron-right"></i></a>
+            <h2>Courses <i class="fa-solid fa-circle-chevron-down"></i></h2>
+            <h3>Graduation</h3>
+            <h3>Post Graduation</h3>
+        </div>
+        <div class="arrow-down"></div>
+    </div>
+</div>
+
+<div class="home-video" data-aos="fade-up">
+    <div class="vid">
+        <video  muted autoplay loop>
+            <source src="{% static 'home/images/homevid.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="video-heading">
+    <h2>This is Cranfield</h2>
+</div>
+
+
+<div class="events" data-aos="fade-up">
+    <h1>UPCOMING EVENTS</h1>
+    <div class="small-line"></div>
+
+    <div class="event-carouse">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for event in events %}
+                    <div class="main swiper-slide">
+                        <div class="event-date">{{event.event_date|date:"d M Y"}}
+                        </div>
+                        <div class="event-arrow"></div>
+                        <p class="department">{{event.department}}</p>
+                        <div class="small-line2"></div>
+                        <p class="description">{{event.description}}</p>
+                        <a class="event-more" href="{% url 'events' event.id %}">Find out more <i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+               {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="event-arrow2" ></div>
+{% endblock content %}
+
+{% block mrjava %} 
+<script src="{% static 'home/js/home.js' %}"></script>
+{% endblock mrjava %}
+
+
+

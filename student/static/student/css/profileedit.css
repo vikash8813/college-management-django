@@ -1,0 +1,170 @@
+.edit-form{
+    width: 80%;
+    margin: 1.5rem auto;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    padding: 1.5rem;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.back{
+    margin-left: 2rem;
+    color: #271e3d;
+}
+
+.back:hover{
+    opacity: 0.6;
+}
+
+.unchange-photo{
+    display: flex;
+    align-items: center;
+}
+.photo{
+    width: 40%;
+    text-align: center;
+}
+.photo img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.myspan{
+    margin-left: 1rem;
+}
+
+.photo img:hover{
+    opacity: 0.8;
+}
+
+.name-mail{
+    display: flex;
+}
+
+.form-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+
+
+.span-label{
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.span-field{
+    font-size: 1rem;
+    color: #271e3d;
+    margin: 0 1rem;
+}
+
+.width25{
+    width: 30vw;
+}
+
+.width18{
+    width: 20vw;
+}
+.width10{
+    width: 12vw;
+}
+
+.form-error{
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+#id_profile_pic{
+    display: none;
+}
+
+.form-btns{
+    display: flex;
+    margin: 2rem;
+    margin-bottom: 1rem;
+}
+
+.savebtn{
+    margin-right: 1.5rem;
+}
+
+
+
+input[name=semester],input[name=email],input[name=username] {
+    pointer-events: none;
+    background-color: #e9ecef;
+  }
+
+@media(max-width:1100px){
+    .edit-form{
+        width: 90%;
+    }
+}
+
+@media(max-width:900px){
+    .form-field{
+        margin: 0.6rem;
+    }
+
+    .width18{
+        width: 16vw;
+    }
+}
+
+@media(max-width:850px){
+    .photo img{
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .name-mail{
+        flex-direction: column;
+    }
+    .form-field{
+        text-align: left;
+        justify-content: left;
+    }
+
+    .width18{
+        width: 50vw;
+    }
+    .width10{
+        width: 50vw;
+    }
+
+
+}
+
+@media(max-width:600px){
+    .edit-form{
+        padding: 0.5rem;
+    }
+
+    .back{
+        margin-left: 1rem;
+    }
+
+    .unchange-photo{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .photo{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .width25{
+        width: 50vw;
+    }
+    .form-btns{
+        margin: 1rem;
+    }
+}

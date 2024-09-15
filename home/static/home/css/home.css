@@ -1,0 +1,492 @@
+
+.alert-msg{
+    font-size: 1.5rem;
+}
+
+.back-img{
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.reg-admsn{
+    display: flex;
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    bottom: 5%;
+    left: 5%;
+}
+
+.register{
+    margin-right: 3rem;
+    background-color: #f8a602;
+    color: black;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif;
+}
+
+.register:hover{
+    color: #fff;
+}
+
+
+.msg-notify{
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+}
+.chnc-box{
+    width: 40%;
+    margin-right: 20rem;
+}
+
+.chnc-box h1{
+    margin: 2rem 0rem;
+}
+
+.chnc-msg{
+    width: 100%;
+    text-align: center;
+}
+.chnc-msg img{
+    height: 20rem;
+    margin-bottom: 2rem;
+}
+.chnc-msg h1{
+    margin-bottom: 3rem;
+}
+.chnc-msg p{
+    font-size: medium;
+}
+
+.chnc-msg p a{
+    font-weight: bold;
+}
+
+
+
+
+/* SCROLLING NOTIFICATIONS */
+.scroll-box{
+    height: auto;
+    width: 45%;
+}
+
+.scroll-box h1{
+    margin: 2rem ;
+}
+
+
+#scroll-container {
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 2rem;
+    background-color: #271e3d;
+    color: white;
+  }
+  
+  #scroll-text {
+    height: 100%;
+    /* text-align: center; */
+    z-index: 0;
+    font-size: larger;
+    font-weight: bold;
+    
+    /* animation properties */
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    
+    -moz-animation: my-animation 0s linear infinite;
+    -webkit-animation: my-animation 0s linear infinite;
+    animation: my-animation 15s linear infinite;
+  }
+  
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateY(100%); }
+    to { -moz-transform: translateY(-100%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(-100%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+    to {
+      -moz-transform: translateY(-100%);
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+}
+
+.ntfcns{
+    color: white;
+    transition: 0.3s;
+}
+
+.ntfcns:hover{
+    text-decoration: underline;
+    font-size: 1.3rem;
+    color: white;
+}
+
+
+/* COURSES AND UNIVERSITY QUALITIES😊😊 */
+
+
+
+.study-cran{
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 10rem auto;
+    margin-bottom: 0;
+    /* width: 95%; */
+    background-color: #f1f1f1;
+    padding: 2rem 4rem;
+}
+
+.cran{
+    color: #271e3d;
+    width: 50%;
+}
+.cran h1{
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
+}
+
+.cran p{
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+}
+
+.cran-quality{
+    margin-top: 3rem;
+}
+
+.cran-quality p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fa-award{
+    margin-right: 0.5rem;
+}
+
+.cran-quality hr{
+    margin-bottom: 2rem;
+    height: 2rem;
+}
+
+.study-course{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    color: white;
+    font-weight: bold;
+    width: 30%;
+    margin-left: 20rem;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+.course-content{
+    background-color: #271e3d;
+    display: flex;
+    height: 90%;
+    width: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.course-content a{
+    font-size: 1.5rem;
+}
+
+.course-content h2{
+    margin: 2.5rem 0;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 15rem solid transparent;
+    border-right: 15rem solid transparent;
+    border-top: 3.5rem solid #271e3d;
+}
+
+/* VIDEO STARTS FROM HERE */
+.home-video{
+    background-color: #271e3d;
+    text-align: center;
+    padding: 4rem 0 0 0;
+    /* height: 60vh; */
+}
+
+.vid{
+    position: relative;
+}
+
+.vid video{
+    width: 80%;
+}
+
+.video-heading{
+    color: white;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-heading h2{
+    background-color: #271e3d;
+    padding: 1rem;
+    /* display: block; */
+}
+
+
+/* EVENTS CAROUSEL  */
+
+.events{
+    background-color: #f1f1f1;
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 5rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events h1{
+    color: #2c2c2b;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.small-line{
+    height: 0.5rem;
+    width: 3rem;
+    background-color: #005d8f;
+}
+
+.event-carouse{
+    width: 85%;
+    margin: 8rem auto 5rem;
+}
+
+
+/* SWIPER-CAROUSEL STARTING HERE🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️ */
+
+.swiper {
+    width: 80%;
+    overflow: hidden;
+    /* height: 100%; */
+  }
+
+
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* width: 15rem; */
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 25rem;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff;
+        padding: 2rem;
+        padding-top: 0;
+        padding-bottom: 4rem;
+        /* width: 100%; */
+    }
+
+    .event-date {
+        background-color: #f1f1f1;
+        width: 20rem;
+        margin: 0 auto;
+        font-weight: bold;
+    }
+
+    .event-arrow {
+        width: 0;
+        height: 0;
+        border-left: 10rem solid transparent;
+        border-right: 10rem solid transparent;
+        border-top: 3.5rem solid #f1f1f1;
+        margin: 0 auto 2rem;
+        
+    }
+
+    .small-line2{
+        height: 0.5rem;
+        width: 2rem;
+        background-color: #005d8f;
+        margin: 2rem auto;
+    }
+
+    .description{
+        height: 10rem;
+    }
+
+    .event-more{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .swiper-pagination{
+        position: relative;
+        margin-top: 3rem;
+    
+    }
+
+    .swiper-pagination-bullet{
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #271e3d;
+        border-radius: 0;
+        background-color: #f1f1f1;
+    }
+
+    .swiper-pagination-bullet-active{
+        background-color: #005d8f;
+    }
+
+
+    .event-arrow2{
+        width: 0;
+        height: 0;
+        border-left: 50vw solid transparent;
+        border-right:  50vw solid transparent;
+        border-top: 15vh solid #f1f1f1;
+        margin: 0 auto 4rem;
+        
+    }
+
+
+@media(max-width:1000px){
+    .reg-admsn{
+        display: flex;
+        position: absolute;
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:800px){
+
+    .reg-admsn{
+        display: none;
+    }
+
+    .msg-notify{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .chnc-box{
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .chnc-box h1{
+        margin: 0.3rem 0rem;
+    }
+
+    .chnc-msg{
+        width: 100%;
+        margin: 2rem auto;
+    }
+    .scroll-box{
+        height: 20rem;
+        width: 100%;
+    }
+
+    
+    #scroll-container {
+        width: 100%;
+        height: 100%;
+    }
+    #scroll-text {
+                -moz-animation: my-animation 10s linear infinite;
+        -webkit-animation: my-animation 10s linear infinite;
+        animation: my-animation 10s linear infinite;
+    }
+
+    .study-cran{
+        flex-direction: column;
+    }
+    
+    .cran{
+        width: 90%;
+        margin: 3rem auto;
+        text-align: center;
+    }
+
+    .cran h1{
+        color: black;
+    }
+
+    .study-course{
+        width: 70%;
+        margin: 3rem auto;
+    }
+
+    .course-content{
+        padding: 5rem 0;
+        height: 80%;
+    }
+
+    .home-video{
+        padding: 3rem 2rem 0;
+    }
+
+    .vid video{
+        width: 100%;
+    }
+    .event-arrow2{
+        border-top: 10vh solid #f1f1f1;
+        
+    }
+}
+

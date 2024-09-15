@@ -1,0 +1,65 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'teacher/css/notification.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="main-h1 addmsgclass">Add Notification</h1>
+<div class="add-notify">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{message.tags}}{% endif %} alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="addform">
+        <form action="" method="POST" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="about-pdf">
+                <span class="span-label">{{fm.label_tag}}</span>
+                <span class="span-field">{{fm}}</span>
+                <span class="span-error">{{fm.errors|striptags}}</span>
+            </div>
+            {% endfor %}
+
+            <input type="submit" value="Save" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+<div class="notify-message">
+    <h1 class="addmsgclass">Student Notifications</h1>
+
+    <div class="notify-box">
+        <div class="scroll-box">
+            <!-- <h1>Student Notifications</h1> -->
+            <div id="scroll-container">
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Message</th>
+                        <th>Sent By</th>
+                        <th>Delete Message</th>
+                    </tr>
+                    {% for nm in allmessages %}
+                    <tr>
+                        <td class="notify-date">
+                            {{nm.date}}
+                        </td>
+                        <td> {{nm.message}}</td>
+                        <td> {{nm.message_by}}</td>
+                        <td><a href="{% url 'message_delete' nm.id %}"><button class="btn btn-outline-danger">Delete</button></a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

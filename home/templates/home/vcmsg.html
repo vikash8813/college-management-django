@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Vice Chancller-Cranfield University
+{% endblock title%}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/vcmsg.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<div class="vcmsg-img" data-aos="fade-up">
+    <img src="{% static 'home/images/vcpageimg.jpg' %}" alt="">
+    <h1 id="effect"></h1>
+</div>
+
+<div class="msg" data-aos="fade-up">
+    <div class="vcimg">
+        <img src="{% static 'home/images/vcimg2.jpg' %}" alt="">
+        <h1>-Dr. Gautam Das</h1>
+    </div>
+    <div class="vcpara">
+        <p>
+            The University of Mumbai is one of the oldest and premier Universities of India. I am honoured and greatly privileged to lead this great Institution; and continue to address the imminent challenges and to harness theovert and covert opportunities, in order to satisfy our stake holders. A unique of its kind, currently the University has 56 Departments, 12 specialized Centres, 781 Affiliated Colleges, 2 main Campuses, 2 sub Campuses, 2 Model Colleges, and the ‘School of Engineering and Applied Sciences’ at Kalyan as the University’s own Engineering College. It has perhaps the largest geographical area under its jurisdiction from Thane district to Sindhudurg district, a spread of more than 600 km.</p>
+    </div>
+</div>
+
+<script>
+        
+    var index = 0;
+    var text = 'Vice Chanceller - Dr. Gautum Das';
+    var speed = 50;
+
+    window.onload=setInterval(() => {
+       textEffect() 
+    }, 1000);
+
+    function textEffect() {
+        if (index < text.length) {
+            document.getElementById("effect")
+                    .innerHTML += text.charAt(index);
+            index++;
+            setTimeout(textEffect, speed);
+        }
+    }
+
+</script>
+
+
+{% endblock content %}

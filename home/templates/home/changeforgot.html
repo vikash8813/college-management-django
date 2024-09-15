@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}
+Cranfield University- forgot password
+{% endblock %}
+
+{% block desgin %}
+<!-- <link rel="stylesheet" href="{% static 'home/css/admission.css' %}"> -->
+{% endblock %}
+
+
+{% block content %}
+
+<h1>forgot pass</h1>
+
+<div class="forgot-pass">
+    {% if messages %}
+
+    {% for message in messages %}
+    <div class="alert {% if message.tags %} alert-{{message.tags}} {% endif %} alert-dismissible   logfont" role="alert">
+        <strong>{{message}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {% for fm in form %}
+            <span> {{fm.label_tag}}</span> {{fm}} {{fm.errors|striptags}}
+            <!-- {{form}} -->
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+
+{% endblock %}

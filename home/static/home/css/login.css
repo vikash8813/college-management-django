@@ -1,0 +1,95 @@
+body{
+    font-size: 62.5%;
+}
+.global-container{
+    display: flex;
+    justify-content: space-between;
+}
+.reg-img{
+    width: 50%;
+    text-align: center;
+    color: #271e3d;
+    
+}
+
+.reg-img img{
+    width: 15rem;
+    margin: 3rem 0;
+    margin-top: 10rem;
+}
+
+.reg-img h2{
+    font-size: 3rem;
+}
+
+label{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.card{
+    width: 50%;
+    margin: 2rem 10rem;
+    /* background-color: #271e3d; */
+    background-color: #f1f1f1;
+
+    color: #271e3d;
+    border-radius: 0;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 40%);
+    /* text-align: center; */
+    padding: 3rem 5rem;
+}
+
+.card-title{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    /* font-weight: bold; */
+}
+
+.form-control{
+    padding: 0;
+    width: 100%;
+}
+
+.sign{
+    font-size: 2rem;
+}
+
+.log{
+    font-size: 1.4rem;
+}
+
+.log a{
+    font-weight: bold;
+}
+
+.form-group input{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.2rem 1rem;
+    height: 4rem;
+}
+
+.logfont{
+    font-size: 1.5rem;
+    width: 100%;
+    /* padding: 0; */
+}
+
+.error{
+    color: red;
+    font-size: 1.5rem;
+}
+
+@media(max-width:800px){
+    .reg-img{
+        display: none;
+    }
+
+    .card{
+        margin: 0;
+        width: 100%;
+    }
+    .card-title{
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,129 @@
+.student-fine{
+    width: 80%;
+    margin: 2rem auto;
+}
+.back{
+    margin-left: 2rem;
+    color: #271e3d;
+}
+
+.back:hover{
+    opacity: 0.6;
+}
+.stu-fine{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #b93131;
+    text-decoration: underline;
+}
+
+table{
+    width: 100%;
+}
+
+table,tr,td,th{
+    border: 1px solid black;
+    text-align: center;
+}
+
+table{
+    background-color: #f1f1f1;
+}
+
+tr,td,th{
+    padding: 0.5rem;
+}
+td{
+    /* font-weight: 450; */
+    font-size: 1rem;
+}
+
+.heading{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.paid{
+    background-color: green;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: white;
+}
+
+.unpaid{
+    background-color: orange;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: white;
+}
+
+td:last-child{
+    border-left: none;
+}
+
+.total{
+    font-weight: bold;
+}
+
+.nofine{
+    color: green;
+    font-size: 2.5rem;
+}
+
+.addform{
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+}
+
+
+.about-pdf{
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.span-label{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.span-field{
+    margin: 0 1rem;
+}
+
+.span-error{
+    color: red;
+}
+
+textarea[name=description]{
+    height: 7rem;
+}
+
+@media(max-width:700px){
+    .student-fine{
+        width: 90%;
+    }
+    .addform{
+        width: 95%;
+        padding: 1rem;
+    }
+    .span-error{
+        font-size: 0.7rem;
+    }
+
+}
+
+@media(max-width:500px){
+    .student-fine{
+        width: 100%;
+    }
+    tr,td,th{
+        padding: 0.3rem;
+    }
+    .heading{
+        font-size: 1rem;
+    }
+}

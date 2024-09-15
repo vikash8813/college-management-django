@@ -1,0 +1,161 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cranfield University- Gallery
+{% endblock title %}
+
+{% block desgin%}
+
+<link rel="stylesheet" href="{% static 'home/css/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="car" data-aos="fade-up">
+  <div id="carouselExampleControls" class="carousel slide car" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'home/images/wind.jpeg' %}" class="d-block " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'home/images/cr3.jpg' %}" class="d-block " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'home/images/cr4.jpg' %}" class="d-block " alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="text">
+  <h1 data-aos="fade-up">Cranfield University-Gallery</h1>
+  <div class="small-line2" data-aos="fade-up"></div>
+  <h5 data-aos="fade-up">Photo Section</h5>
+  <div class="small-line3" data-aos="fade-up"></div>
+</div>
+
+<div class="gal-dynamic">
+  <div class="two-boxes">
+    <div class="box1">
+      <a href="{{event1.event_image.url}}" target="_blank"><img src="{{event1.event_image.url}}" alt="" data-aos="fade-up"></a>
+      <p data-aos="fade-up">{{event1.description}}</p>
+    </div>
+    <div class="box2">
+      <a href="{{event2.event_image.url}}" target="_blank"><img src="{{event2.event_image.url}}" alt="" data-aos="fade-up"></a>
+      <p data-aos="fade-up">{{event2.description}}</p>
+    </div>
+  </div>
+  <div class="one-box">
+    <a href="{{event3.event_image.url}}" target="_blank"><img src="{{event3.event_image.url}}" alt="" data-aos="fade-up"></a>
+    <p data-aos="fade-up">{{event3.description}}</p>
+  </div>
+</div>
+
+
+
+<div class="cont">
+  <div class="three-img">
+    <div class="gallery-image">
+      <div class="inner-img">
+        <div class="galery"><img src="{% static 'home/images/1.jpg' %}" alt="" data-aos="fade-up">
+       <div class="text2">
+        <h1 data-aos="fade-up">Annual Function</h1>
+        <h5 data-aos="fade-up">An annual function is one that occurs once a year in the college. It is a college-sponsored event that allows students to showcase their talents, overcome stage fright, gain confidence, and learn collaborate.Teachers play a very major role in the annual function as the whole function is managed by the teachers.</h5>
+       </div>
+        </div>
+        <div class="galery"><img src="{% static 'home/images/gal1.jpg' %}" alt="" data-aos="fade-up">
+          <div class="text2">     
+            <h1 data-aos="fade-up">Principal Message</h1>
+            <h5 data-aos="fade-up">First and foremost I would like to express my deep sentiments of gratitude to every one of you for your constant support, love and concern towards the college which enables and encourages us to strive hard to carry forward the mission of spreading value-based knowledge to one and all.</h5>
+           </div>
+        </div>
+      </div>
+      <div class="galery ipad">
+        <img src="{% static 'home/images/gal2.jpg' %}" alt="" data-aos="fade-up">
+        <div class="text2 text3">
+          <h1 data-aos="fade-up">Farewell functions</h1>
+          <h5 data-aos="fade-up">A college is a place where we learn new things. We meet many new people. Some of them remain with us while others teach us an important lesson after they leave. It is very important that the farewell speech for the college students should be emotional </h5>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-image">
+
+      <div class="inner-img">
+        <div class="galery"><img src="{% static 'home/images/sports.jpg' %}" alt="" data-aos="fade-up">
+          <div class="text2">
+            <h1 data-aos="fade-up">Sports day</h1>
+            <h5 data-aos="fade-up">India celebrates National Sports Day on 29th August to commemorate the birth anniversary of hockey legend, Major Dhyan Chand. The day is also dedicated to the nations’ sports heroes and champions, honoring their contribution and dedication towards bringing laurels to the country.</h5>
+           </div>
+        </div>
+        <div class="galery"><img src="{% static 'home/images/gal7.jpg' %}" alt="" data-aos="fade-up">
+          <div class="text2">
+            <h1 data-aos="fade-up">Science exhibition</h1>
+            <h5 data-aos="fade-up">Science exhibitions presented by college students at local elementary schools foster goodwill in the community, give college students an opportunity to share their science as role models, provide elementary school children with a positive, enjoyable approach to science</h5>
+           </div>
+        </div>
+      </div>
+      <div class="galery ipad2">
+        <img src="{% static 'home/images/gal7.jpg' %}" alt="" data-aos="fade-up">
+        <div class="text2 text3">
+          <h1 data-aos="fade-up">Yoga Day</h1>
+          <h5 data-aos="fade-up">The International Day of Yoga has been celebrated across the world annually on June 21 since 2015, following its inception in the United Nations General Assembly in 2014.[1] Yoga is a physical, mental and spiritual practice which originated in ancient India.</h5>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text">
+  <h1 data-aos="fade-up">Cranfield University-Gallery</h1>
+  <div class="small-line2" data-aos="fade-up"></div>
+  <h5 data-aos="fade-up">Video Section</h5>
+  <div class="small-line3"></div>
+</div>
+
+<div class="main" data-aos="fade-up">
+  <div class="main2">
+    <video controls>
+      <source src="{% static 'home/images/annual.mp4' %}" type="video/mp4">
+    </video>
+    <h1>Annual function</h1>
+  </div>
+  <div class="main2">
+    <video controls>
+      <source src="{% static 'home/images/sports.mp4' %}" type="video/mp4">
+    </video>
+    <h1>Sports Day</h1>
+  </div>
+  <div class="main2">
+    <video controls>
+      <source src="{% static 'home/images/farewall1.mp4' %}" type="video/mp4">
+    </video>
+    <h1>Farewell functions </h1>
+  </div>
+</div>
+<div class="main3" data-aos="fade-up">
+  <div class="two-video">
+    <video controls>
+      <source src="{% static 'home/images/science.mp4' %}" type="video/mp4">
+    </video>
+    <h1>Science exhibition</h1>
+  </div>
+  <div class="two-video">
+    <video controls>
+      <source src="{% static 'home/images/yoga.mp4' %}" type="video/mp4">
+    </video>
+    <h1>Yoga Day</h1>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+

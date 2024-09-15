@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cranfield University- Feedback
+{% endblock title %}
+
+{% block desgin%}
+
+<link rel="stylesheet" href="{% static 'home/css/feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+    {% for i in stud %}
+        <div class="feebacks">
+            <h2>{{i.umessage}}</h2>
+            <div class="feedtime">{{i.feedtime}}</div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+<div class="cont">
+    <div class="add_box">
+        {% if messages %}
+        {% for k in messages %}
+        <p class="msg">{{k}}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <form action="" method="post" novalidate >
+        {% csrf_token %}
+        {% for i in form %}
+         <div class="feedfield">{{i}}</div>  <div class="feederror">{{i.errors|striptags}}</div>
+        {% endfor %}
+
+        <input type="submit" class="btn btn-warning subbtn" value="Submit">
+    </form>
+</div>
+
+
+
+
+{% endblock content %}
+
+

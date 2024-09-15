@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'home/images/logoimg2.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'home/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/base.css' %}">
+
+    {% block desgin %}{% endblock desgin %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="mobile-nav">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'home/images/logoimgbg.png' %}" alt="">
+                </a>
+            </div>
+            <ul class="nav-items dropdown-center no-border ">
+                <a href="" class="dropdown-toggle course-center" data-bs-toggle="dropdown"
+                    aria-expanded="false">Courses</a>
+                <ul class="dropdown-menu">
+                    {% for course in courses %}
+                        <li><a class="dropdown-item" href="#">{{course.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </ul>
+
+
+
+
+
+
+            <div class="nav-btns">
+                <div class="nav-lines"></div>
+                <div class="nav-lines"></div>
+                <div class="nav-lines"></div>
+            </div>
+        </div>
+
+        <div class="deks-nav">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'home/images/logoimgbg.png' %}" class="deks-logo-img" width="100rem"
+                        height="100rem" alt="">
+                </a>
+            </div>
+            <div class="nav-links">
+                <ul class="nav-items">
+                    <a href="{% url 'home' %}">Home</a>
+                </ul>
+                <!-- <ul class="nav-items dropdown-center course-none no-border">
+                    <a href="" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+                    <ul class="dropdown-menu">
+                        {% for course in courses %}
+                            <li><a class="dropdown-item" href="#">{{course.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </ul> -->
+
+                <ul class="desk-items no-border course-none">
+                    <li class="nav-li"><a href="#">Courses <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul>
+                            {% for course in courses %}
+                                <li><a href="{% url 'courses' course.id %}">{{course.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+
+
+ 
+            
+
+
+                <ul class="nav-items">
+                    <a href="{% url 'staffs' %}">Staff</a>
+                </ul>
+                <ul class="nav-items">
+                    <a href="{% url 'gallery' %}">Gallery</a>
+                </ul>
+                {% if request.user.is_authenticated and not request.user.is_staff %}
+                <ul class="nav-items">
+                    <a href="{% url 'student_profile' %}">Student</a>
+                </ul>
+                {% endif %}
+                <ul class="nav-items">
+                    <a href="{% url 'register' %}">Register</a>
+                </ul>
+                <ul class="nav-items">
+                    <a href="{% url 'login' %}">Login</a>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        {% block content %}{% endblock content %}
+    </div>
+
+
+    <div class="main-foot" >
+        <div class="foot">
+            <div class="footer">
+                <div class="foot1">
+                    <a href="{% url 'about' %}">
+                        <h4>About</h4>
+                    </a>
+                    <a href="{% url 'contact' %}">
+                        <h4>Contact Us</h4>
+                    </a>
+                    <a href="{% url 'privacy' %}">
+                        <h4>Privacy</h4>
+                    </a>
+                    <a href="{% url 'feedback' %}">
+                        <h4>Feedback</h4>
+                    </a>
+                </div>
+                <div class="map-txt">
+                    <div class="foot3" data-aos="zoom-out">
+                        <a
+                            href="https://www.google.com/maps/place/28%C2%B007'25.5%22N+76%C2%B023'50.7%22E/@28.1269529,76.3902606,17z/data=!4m14!1m7!3m6!1s0x3912a91cfeadefb9:0x88248778c432d76c!2sAdeend,+Rajasthan!3b1!8m2!3d28.1269273!4d76.3955603!3m5!1s0x0:0xf79c2f3a3813e9ee!7e2!8m2!3d28.1237424!4d76.3974248">
+                            <i class="fa-solid fa-location-dot fa-4x psn-icon"></i></a>
+                        <a
+                            href="https://www.google.com/maps/place/28%C2%B007'25.5%22N+76%C2%B023'50.7%22E/@28.1269529,76.3902606,17z/data=!4m14!1m7!3m6!1s0x3912a91cfeadefb9:0x88248778c432d76c!2sAdeend,+Rajasthan!3b1!8m2!3d28.1269273!4d76.3955603!3m5!1s0x0:0xf79c2f3a3813e9ee!7e2!8m2!3d28.1237424!4d76.3974248" >
+                            <img src="{% static 'home/images/237.png' %}" alt=""></a>
+                    </div>
+                    <div class="foot2">
+                        <i class="fa-solid fa-location-dot fa-4x icon-size"></i>
+                        <h4>Cranfield University,
+                            Mumbai,India,
+                            5BG</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="socal">
+                <p class="txt">FOLLOW CRANFIELD UNIVERSITY ON SOCIAL MEDIA</p>
+                <div class="icon">
+                    <a href="https://www.instagram.com/vikash_jangir2301/" class="foot-icon"><i
+                            class="fa-brands fa-instagram fa-4x icon-size"></i></a>
+                    <a href="https://www.facebook.com/people/Vikash-Jangir/100020336537242/" class="foot-icon"><i
+                            class="fa-brands fa-facebook fa-4x icon-size"></i></a>
+                    <a href="https://twitter.com/vikashj08981011" class="foot-icon"><i
+                            class="fa-brands fa-twitter fa-4x icon-size"></i></a>
+                    <a href="#" class="foot-icon"><i class="fa-brands fa-linkedin-in fa-4x icon-size"></i></a>
+                    <a href="#" class="foot-icon"><i class="fa-brands fa-youtube fa-4x icon-size"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="crn">
+            <h5>&copy;</h5>
+            <h4> Cranfield University</h4>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'home/js/jquery.js' %}"></script>
+    <script src="{% static 'home/js/popper.js' %}"></script>
+    <script src="{% static 'home/js/all.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/js/base.js' %}"></script>
+    {% block mrjava %}{% endblock mrjava %}
+
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+
+</body>
+
+
+</html>
+
+

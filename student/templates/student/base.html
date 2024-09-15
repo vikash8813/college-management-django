@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranfield University - Student</title>
+    <link rel="shortcut icon" href="{% static 'home/images/logoimg2.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'home/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'student/css/base.css' %}">
+    {% block desgin %}{% endblock desgin %}
+    {% block headjs %}{% endblock %}
+</head>
+
+<body>
+    <div class="main-box">
+        <div class="sidebar close">
+
+            <header>
+                <div class="image-text">
+                    <div class="image">
+                        <a href="{% url 'home' %}"><img src="{% static 'home/images/logoimg2.png' %}" alt=""></a>
+                    </div>
+                    <div class="text">
+                        <span>Cranfield University</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-circle-chevron-right toggle"></i>
+            </header>
+
+
+            <div class="main-bar">
+                <div class="main close">
+                    <ul>
+                        <li class="icon-trans">
+                            <a class="{{home}} myaclass"  href="{% url 'home' %}"><i class="fa-solid fa-house-user  icon {{homea}}"></i><span
+                                    class="main-text {{homea}} ">Home</span></a>
+                        </li>
+                        
+                        <li>
+                            <a class="{{profile}}" href="{% url 'student_profile' %}"><i class="fa-solid fa-user icon {{profilea}}"></i><span class="main-text {{profilea}}">My
+                                    profile</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_fine' %}" class="{{fine}}"><i class="fa-solid fa-money-check icon {{finea}}"></i><span
+                                    class="main-text {{finea}}">Fine</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_pdf' %}" class="{{pdf}}"><i class="fa-solid fa-file-pdf icon {{pdfa}}"></i><span
+                                    class="main-text {{pdfa}}">P.D.F</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_notifications' %}" class="{{notify}}"><i class="fa-regular fa-bell icon {{notifya}}"></i><span
+                                    class="main-text {{notifya}}">Notification</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_icard' %}" class="{{icard}}"><i class="fa-solid fa-id-badge icon {{icarda}}"></i><span
+                                    class="main-text {{icarda}}">Icard</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_passchange' %}" class="{{passchange}}"><i class="fa-solid fa-lock icon {{passchangea}}"></i><span
+                                    class="main-text {{passchangea}}">Change Password</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_logout' %}"><i class="fa-solid fa-right-from-bracket icon"></i><span class="main-text">Log
+                                    out</span></a>
+                        </li>
+
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="head">
+                <span class="stu-name">
+                    {% if student.profile_pic %}
+                        <img src="{{student.profile_pic.url}}" alt="">
+                    {% else %}
+                        <img src="{% static 'student/images/profilephoto.webp' %}" alt="">
+                    {% endif %}
+                    <!-- <img src="{% static 'home/images/vcimg2.jpg' %}" alt=""> -->
+                    <h2>{{studentmore.first_name|capfirst}} {{studentmore.last_name|capfirst}}</h2>
+                </span>
+            </div>
+            <div class="content-box">
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'home/js/jquery.js' %}"></script>
+    <script src="{% static 'home/js/popper.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/acae99de45.js" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'home/js/all.min.js' %}"></script> -->
+
+    <script src="{% static 'student/js/base.js' %}"></script>
+    {% block mrjava %}{% endblock mrjava %}
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</body>
+
+
+</html>

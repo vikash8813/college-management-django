@@ -1,0 +1,29 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'teacher/css/students.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="student-box">
+    <h1>Students List</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Profile</th>
+            <th>Fine</th>
+        </tr>
+        {% for stu in allstudents %}
+        <tr>
+            <td class="stu-username">{{stu.username}}</td>
+            <td>{{stu.get_full_name}}</td>
+            <td><a href="{% url 'student_profile_edit' stu.username %}"><button class="btn btn-success">Edit</button></a></td>
+            <td><a href="{% url 'student_add_fine' stu.username %}"><button class="btn btn-warning text-white">Fine</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

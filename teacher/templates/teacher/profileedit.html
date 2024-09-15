@@ -1,0 +1,138 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'student/css/profileedit.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<a href="{% url 'student_profile' %}" class="back"><button><i class="fa-solid fa-arrow-left-long"></i></button></a>
+
+<div class="edit-form">
+    <form action="" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        <div class="unchange-photo">
+            <div class="unchange">
+                <div class="name-mail">
+                    <div class="form-field">
+                        <span class="span-label">{{form.username.label_tag}}</span>
+                        <span class="span-field width25">{{form.username}}</span>
+                        <span class="form-error">{{form.username.errors}}</span>
+                    </div>
+                </div>
+                <div class="name-mail">
+                    <div class="form-field">
+                        <span class="span-label">{{form.email.label_tag}}</span>
+                        <span class="span-field width25">{{form.email}}</span>
+                        <span class="form-error">{{form.email.errors}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo">
+                {% if student.profile_pic %}
+                <img src="{{student.profile_pic.url}}" alt="">
+                {% else %}
+                <img src="{% static 'student/images/profilephoto.webp' %}" alt="">
+                {% endif %}
+                {{form.profile_pic}}
+                <span onclick="myfunc()"  class="btn btn-outline-success myspan"><i
+                    class="fa-regular fa-pen-to-square"></i></span>
+
+            </div>
+        </div>
+
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.first_name.label_tag}}</span>
+                <span class="span-field width10">{{form.first_name}}</span>
+                <span class="form-error">{{form.first_name.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.last_name.label_tag}}</span>
+                <span class="span-field width18">{{form.last_name}}</span>
+                <span class="form-error">{{form.last_name.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.father_name.label_tag}}</span>
+                <span class="span-field width18">{{form.father_name}}</span>
+                <span class="form-error">{{form.father_name.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.mother_name.label_tag}}</span>
+                <span class="span-field width18">{{form.mother_name}}</span>
+                <span class="form-error">{{form.mother_name.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.experience.label_tag}}</span>
+                <span class="span-field width18">{{form.experience}}</span>
+                <span class="form-error">{{form.experience.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.incharge.label_tag}}</span>
+                <span class="span-field width10">{{form.incharge}}</span>
+                <span class="form-error">{{form.incharge.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.age.label_tag}}</span>
+                <span class="span-field width18">{{form.age}}</span>
+                <span class="form-error">{{form.age.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.DOB.label_tag}}</span>
+                <span class="span-field width18">{{form.DOB}}</span>
+                <span class="form-error">{{form.DOB.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.subject_teaches.label_tag}}</span>
+                <span class="span-field width18">{{form.subject_teaches}}</span>
+                <span class="form-error">{{form.subject_teaches.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.date_join.label_tag}}</span>
+                <span class="span-field width18">{{form.date_join}}</span>
+                <span class="form-error">{{form.date_join.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="name-mail">
+            <div class="form-field">
+                <span class="span-label">{{form.address.label_tag}}</span>
+                <span class="span-field width18">{{form.address}}</span>
+                <span class="form-error">{{form.address.errors|striptags}}</span>
+            </div>
+            <div class="form-field">
+                <span class="span-label">{{form.phone.label_tag}}</span>
+                <span class="span-field width18">{{form.phone}}</span>
+                <span class="form-error">{{form.phone.errors|striptags}}</span>
+            </div>
+        </div>
+        <div class="form-btns">
+            <button type="submit " class="btn btn-primary savebtn">Save</button>
+            <a class="btn btn-danger" href="{% url 'teacher_profile' %}">Cancel</a>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    const primary = document.querySelector('.myimg')
+    // const myspan=document.querySelector('.myspan')
+    function myfunc() {
+        primary.click()
+    }
+
+    // const inpfile=document.querySelector('.myimg')
+    // inpfile.addEventListener("change",function(){
+    //     const file=this.files[0];
+    //     console.log(file)
+    // })
+</script>
+{% endblock %}

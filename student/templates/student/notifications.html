@@ -1,0 +1,47 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'student/css/notifications.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="notify-message">
+    <h1>Student Notifications</h1>
+    <div class="notify-box">
+        <div class="scroll-box" data-aos="fade-up">
+            <!-- <h1>Student Notifications</h1> -->
+            <div id="scroll-container">
+                <div id="scroll-text">
+                    {% for nm in allnotifications %}
+                    <p><a href="{{nm.pdfurl}}" target="_blank" class="ntfcns"> {{nm.notify_date}} -
+                            {{nm.notification}}</a></p> <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message-box">
+    <h1>Messages</h1>
+        <div class="for-border">
+            <div class="innerdiv">
+                {% for msg in allmessages %}
+                    <div class="message-flex">
+                        <span class="span-date">{{msg.date}}</span>
+                        <div class="span-msg">{{msg.message|capfirst}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block mrjava %}
+<script src="{% static 'student/js/notifications.js' %}"></script>
+{% endblock %}
+
+
+

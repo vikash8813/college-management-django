@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cranfield University- Contact
+{% endblock title %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/contact.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="back-img" data-aos="fade-up">
+    <img src="{% static 'home/images/contact.jpg' %}" alt="">
+</div>
+<div class="main-contact" data-aos="fade-up">
+    <div class="cont-txt">
+        <h1>Contact Cranfield University</h1>
+        <div class="small-line2"></div>
+        <h3>We are always here to help you</h3>
+    </div>
+</div>
+<div class="contact">
+    <div class="address" data-aos="fade-right">
+        <h2><i class="fa-solid fa-location-dot"></i> ADDRESS</h2>
+        <p>Cranfield University, Mumbai,India, 5BG</p>
+    </div>
+    <div class="phone" >
+        <h2><i class="fa-solid fa-phone"></i> PHONE</h2>
+        <p>+917877541408(Office)</p>
+        <p>+917877541408(Hod)</p>
+        <p>+917877541408(Dean)</p>
+        <p>+917877541408(Whatsup)</p>
+    </div>
+    <div class="email" data-aos="fade-left">
+        <h2><i class="fa-solid fa-envelope"></i> EMAIL</h2>
+        <p>yogeshyadav@gmail.com(Office)</p>
+        <p>yogeshyadav@gmail.com(Hod)</p>
+        <p>yogeshyadav@gmail.com(Dean)</p>
+    </div>
+</div>
+
+{% endblock content %}

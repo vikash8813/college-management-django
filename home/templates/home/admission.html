@@ -1,0 +1,102 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+Cranfield University- Admissions
+{% endblock %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/admission.css' %}">
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="admsn-img" data-aos="fade-up">
+    <img src="{% static 'home/images/adimg.jpg' %}" alt="">
+</div>
+
+<div class="study-cran" >
+    <h1 data-aos="fade-up">STUDY AT CRANFIELD</h1>
+    <div class="small-line2" data-aos="fade-up"></div>
+    <p data-aos="fade-up">Whether you’re considering a foundation course or an undergraduate degree, a master's or a PhD, Cranfield is a place where students achieve success.</p>
+</div>
+
+<h1 class="cran-course">
+    Cranfield Fees & Elligiblity
+</h1>
+<div class="box1" data-aos="fade-up">
+
+    <div class="course-table">
+
+        <table>
+            <tr>
+                <th class="admis-head">Course</th>
+                <th class="admis-head">Fees(per/year)</th>
+                <th class="admis-head"> Elligiblity</th>
+            </tr>
+            {% for course in courses %}
+                <tr>
+                    <td class="admis-data1"><a href="{% url 'courses' course.id %}">{{course.name}}</a></td>
+                    <td class="admis-data"> &#x20B9 {{course.fees|intcomma}}</td>
+                    <td class="admis-data">{{course.eligiblity}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<h1 class="cran-course">Courses Offered By Cranfield</h1>
+
+{% for course in courses %}
+<div class="course-pay" data-aos="fade-up">
+
+    <div class="course">
+        <div class="name-fees">
+            <a href="{% url 'courses' course.id %}"><h2>{{course.title}} [{{course.name}}]</h2></a>
+            <div class="fees">
+                <h1>{{course.fees|intcomma}} <p class="peryear">per year</p></h1>
+                <button type="button" class="btn btn-outline-success">Pay</button>
+            </div>
+
+        </div>
+
+        <div class="details">
+            <p class="time"><i class="fa-solid fa-clock"></i> - {{course.duration}}</p>
+            <p class="semester"><i class="fa-solid fa-book-open-reader"></i> - {{course.semester}} semesters</p>
+        </div>
+
+        
+
+        <div class="eligible-date">
+            <div class="eligible">
+                <p>Eligiblity</p>
+                <h2 class="course-el">{{course.eligiblity}}</h2>
+            </div>
+            {% if course.begins or course.ends %}
+            <div class="admsn-date">
+                <p>Application Date</p>
+                <h2>{{course.bgein}} - {{course.ends}}</h2>
+            </div> 
+            {% else %}   
+            <div class="admsn-date">
+                <p>Application Date</p>
+                <h2>Notify Soon</h2>
+            </div>    
+            {% endif %}
+        </div>
+
+
+        <p class="mail"><i class="fa-solid fa-envelope"></i> - {{course.email}}</p>
+
+        <a href="{% url 'courses' course.id %}"><h3>More Details about course <i class="fa-solid fa-circle-chevron-right"></i></h3></a>
+
+    </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

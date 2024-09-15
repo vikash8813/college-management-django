@@ -1,0 +1,101 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+Cranfield University - Courses
+{% endblock %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/course.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="course-img">
+    <img src="{% static 'home/images/crancourse.jpg' %}" alt="">
+</div>
+
+<div class="course">
+    <h1>Cranfield Courses</h1>
+    <div class="small-line2"></div>
+    <p>We not only study ut we made future.</p>
+</div>
+
+<div class="cran-course">
+    <div class="detail">
+        <h1 class="name">{{course.title}}[{{course.name}}]</h1>
+        <h2 class="fees">&#8377 {{course.fees|intcomma}} /year</h2>
+    </div>
+    <div class="place">
+        <div class="duration">
+            <h2><i class="fa-regular fa-calendar fa-2x"></i></h2>
+            <div class="course-info">
+                <h3>Duration</h3>
+                <h2>{{course.duration}}</h2>
+            </div>
+        </div>
+        <div class="seats">
+            <h2><i class="fa-solid fa-city fa-2x"></i></h2>
+            <div class="course-info">
+                <h3>Seats</h3>
+                <h2>{{course.seats}}</h2>
+            </div>
+        </div>
+        <div class="semester">
+            <h2><i class="fa-solid fa-book-open fa-2x"></i></h2>
+            <div class="course-info">
+                <h3>Semesters</h3>
+                <h2>{{course.semester}}</h2>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="subjects">
+        <h3>Subjects:</h3>
+        <h4>{{course.subjects}}</h4>
+    </div>
+
+    <span class="info">Course Information</span>
+
+    <div class="elligiblity">
+        <div class="ellig">
+            <h2>ELLIGIBLITY</h2>
+            <h3>{{course.eligiblity}}</h3>
+        </div>
+         <div class="dates">
+            {% if course.begins or course.ends %}
+            <div class="admsn-date">
+                <h2>Application Date</h2>
+                <h3>{{course.bgein}} - {{course.ends}}</h3>
+            </div> 
+            {% endif %}
+         </div>
+    </div>
+
+
+    <div class="descrip">
+        <h2>DESCRIPTION</h2>
+        <h3>{{course.description}}</h3>
+    </div>
+
+    <div class="subjects">
+        <h3>Department Head:</h3>
+        <h4>{{course.department_head}}</h4>
+    </div>
+
+    <span class="info">Contact</span>
+
+    <div class="contact">
+        <div class="mail">
+            <h2><i class="fa-solid fa-envelope"></i>- {{course.email}}</h2>
+        </div>
+        <div class="phone">
+            <h2><i class="fa-solid fa-phone"></i>- {{course.phone}}</h2>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

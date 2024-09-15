@@ -1,0 +1,25 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'teacher/css/addpdf.css' %}">
+{% endblock desgin %}
+
+{% block content %}
+<div class="addpdf-form">
+    <h1>Add Pdfs</h1>
+    <form action="" method="POST" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="about-pdf">
+            <span class="span-label">{{fm.label_tag}}</span>
+            <span class="span-field">{{fm}}</span>
+            <span class="span-error">{{fm.errors|striptags}}</span>
+        </div>
+        {% endfor %}
+
+        <input type="submit" value="Save" class="btn btn-primary">
+    </form>
+</div>
+
+{% endblock %}

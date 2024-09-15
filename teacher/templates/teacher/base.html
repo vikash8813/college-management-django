@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranfield University - Staff</title>
+    <link rel="shortcut icon" href="{% static 'home/images/logoimg2.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'home/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'teacher/css/base.css' %}">
+    {% block desgin %}{% endblock desgin %}
+    {% block headjs %}{% endblock %}
+    {% block morestyle %}{% endblock %}
+</head>
+<body>
+    <div class="main-box">
+        <div class="sidebar close">
+
+            <header>
+                <div class="image-text">
+                    <div class="image">
+                        <a href="{% url 'home' %}"><img src="{% static 'home/images/logoimg2.png' %}" alt=""></a>
+                    </div>
+                    <div class="text">
+                        <span>Staff</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-circle-chevron-right toggle"></i>
+            </header>
+
+
+            <div class="main-bar">
+                <div class="main close">
+                    <ul>
+                        <li class="icon-trans">
+                            <a class="{{home}} myaclass" href="{% url 'home' %}"><i
+                                    class="fa-solid fa-house-user  icon {{homea}}"></i><span
+                                    class="main-text {{homea}} ">Home</span></a>
+                        </li>
+
+                        <li>
+                            <a class="{{profile}}" href="{% url 'teacher_profile' %}"><i
+                                    class="fa-solid fa-user icon {{profilea}}"></i><span
+                                    class="main-text {{profilea}}">My
+                                    profile</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'teacher_pdf' %}" class="{{pdf}}"><i class="fa-solid fa-file-pdf icon {{pdfa}}"></i><span
+                                    class="main-text {{pdfa}}"> Add P.D.F</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'addnotification' %}" class="{{notifyb}}"><i class="fa-regular fa-bell icon {{notifyba}}"></i><span
+                                    class="main-text {{notifyba}}"> Add Notification  </span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'addmessages' %}" class="{{addmsg}}"><i class="fa-solid fa-message icon {{addmsga}}"></i><span
+                                    class="main-text {{addmsga}}"> Add Message  </span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'studentinfo' %}" class="{{stu}}"><i class="fa-solid fa-user-graduate icon {{stua}}"></i><span
+                                    class="main-text {{stua}}">Students</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'addevents' %}" class="{{addevent}}"><i class="fa-solid fa-calendar-plus icon {{addeventa}}"></i><span
+                                    class="main-text {{addeventa}}">Add Events</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'addcourse' %}" class="{{addcourse}}"><i class="fa-solid fa-book-open icon {{addcoursea}}"></i><span
+                                    class="main-text {{addcoursea}}">Add Courses</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'teacher_icard' %}" class="{{icard}}"><i class="fa-solid fa-id-badge icon {{icarda}}"></i><span
+                                    class="main-text {{icarda}}">Icard</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'teacher_passchange' %}" class="{{passchange}}"><i class="fa-solid fa-lock icon {{passchangea}}"></i><span class="main-text {{passchangea}}">Change
+                                    Password</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'teacher_logout' %}"><i class="fa-solid fa-right-from-bracket icon"></i><span class="main-text">Log
+                                    out</span></a>
+                        </li>
+
+                      
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="head">
+                <span class="stu-name">
+                        {% if profile_pic %}
+                            <img src="{{profile_pic.url}}" alt="">
+                        {% else %}
+                            <img src="{% static 'student/images/profilephoto.webp' %}" alt="">
+                        {% endif %}
+                        <h2>{{user_name}}</h2>
+
+                </span>
+            </div>
+            <div class="content-box">
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'home/js/jquery.js' %}"></script>
+    <script src="{% static 'home/js/popper.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/acae99de45.js" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'home/js/all.min.js' %}"></script> -->
+
+    <script src="{% static 'teacher/js/base.js' %}"></script>
+    {% block mrjava %}{% endblock mrjava %}
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+</body>
+</html>

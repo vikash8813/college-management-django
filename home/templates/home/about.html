@@ -1,0 +1,71 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Craanfield University- About
+{% endblock title %}
+
+{% block desgin %}
+<link rel="stylesheet" href="{% static 'home/css/about.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="back-img" data-aos="fade-up">
+    <img src="{% static 'home/images/about4.png' %}" alt="">
+</div>
+
+    <div class="uni" data-aos="fade-up" >
+        <h1>About Cranfield University</h1>
+        <div class="small-line2"></div>
+        <div class="uni-txt">
+            <p>We’re Cranfield and we’re different. Founded almost 75 years ago to meet the demands of a new kind of society, economy and world, our principles resonate now more than ever.
+            <br>
+            <br>
+            We are a campus university with over 10,000 students, nestled in 600 acres of Staffordshire countryside and just an hour from Manchester and Birmingham. It’s a big campus but a small and cosmopolitan community, with space to think and plenty to do.</p>
+        </div>
+    </div>
+
+<div class="about-main" data-aos="fade-up">
+    <div class="about-img-txt" >
+        <div class="about-image" data-aos="fade-up">
+          <img src="{% static 'home/images/wind.jpeg' %}" alt="">
+        </div>
+        <div class="about-text" data-aos="fade-up">
+            <h2 class="heading  lft">Sustainability at Cranfield </h2>
+            <p class="para">At the core of our mission is the vision for a more sustainable world, driven by the United Nations Sustainable Development Goals.</p>
+            <br>
+            <br>
+            <p class="para">Sustainability is embedded in everything we do at Keele, and this drive has led to us leading innovative trials in smart energy and green technology. From hosting the first UK trial of hydrogen blending in a gas network, testing new smart energy technologies, to producing our own renewable energy on campus, we're proud to be leading the sector on sustainability.</p>
+            <br>
+            <br>
+            <p class="para">Our efforts are recognised around the globe, a status which was cemented when we won the Global Sustainability Institution of the Year award at the Green Gown Awards in 2021.</p>
+        </div>
+    </div>
+    <div class="about-img-txt1" data-aos="fade-up">
+        <div class="about-image" data-aos="fade-up">
+          <img src="{% static 'home/images/research.jpeg' %}" alt="">
+        </div>
+        <div class="about-text" data-aos="fade-up">
+            <h2 class="heading">Our research</h2>
+            <p class="para1">Our research seeks to improve lives and address the most pressing challenges across our region, country, and world.</p>
+            <br>
+            <br>
+            <p class="para1">Our academics are actively studying matters of global importance: from food security, climate change and smart energy, to neglected tropical diseases, global health and sustainable futures.</p>
+            <br>
+            <br>
+            <p class="para1">It’s no wonder that 80% of our research is deemed world-leading or internationally excellent in the Research Excellence Framework (2021).</p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+{% block mrjava %}
+<script src="{% static 'home/js/about.js' %}"></script>
+{% endblock mrjava %}
